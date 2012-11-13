@@ -1,16 +1,16 @@
-play-stylus
-===========
+play-livescript
+===============
 
-[stylus] [1] asset handling for [Play 2.0] [2], implemented as an [sbt] [3]
-plugin (very similar to Play's handling of CoffeeScript and LESS).
+Rudimentary [livescript] [1] asset handling for [Play 2.0] [2], implemented as an [sbt] [3]
+plugin (very similar to Play's handling of CoffeeScript and LESS), working very similarly to [play-stylus] [4] (from which it is in fact forked).
 
 Prerequisites
 -------------
 
-The plugin assumes the availability of the `stylus` executable. With
+The plugin assumes the availability of the `livescript` executable. With
 node.js and npm installed, run
 
-    npm install -g stylus
+    npm install -g livescript
 
 to install stylus globally, thereby installing not only the module, but
 also the executable.
@@ -18,30 +18,25 @@ also the executable.
 Installation
 ------------
 
-In your Play application folder, add
+Local installation only for now. First, clone the repository:
 
-    resolvers += "Patience Releases" at "http://repo.patience.io/"
+    git clone https://github.com/12foo/play-livescript.git
 
-    addSbtPlugin("patience" % "play-stylus" % "0.1.3")
+In the project directory, do:
 
-to `project/plugins.sbt`.
+    sbt -Dplay.path=/your/play/directory publish
 
-The plugin automatically registers for compilation of `app/assets/**/*.styl`, that is all stylus files in your `app/assets` directory.
+This will compile the plugin and install it into your Play repository. To use it in your webapp, add the plugin to its `project/plugins.sbt`:
 
-sbt settings
-------------
+    addSbtPlugin("com.github.otfoo" % "play-livescript" % "0.1")
 
-  - `compile:resource-generators`: The stylus file watcher is being added here
-  - `play-stylus-entry-points`: All files matching `app/assets/**/*.styl`, except files starting in an underscore
-  - `play-stylus-options`: A sequence of strings passed to stylus as command-line flags
 
 License
 -------
-
-Copyright (c) 2012 Johannes Emerich
 
 MIT-style licensing, for details see file LICENSE.
 
 [1]: http://learnboost.github.com/stylus/
 [2]: http://www.playframework.org/
 [3]: https://github.com/harrah/xsbt
+[4]: https://github.com/patiencelabs/play-stylus

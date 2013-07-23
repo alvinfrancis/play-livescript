@@ -1,7 +1,7 @@
 play-livescript
 ===============
 
-Rudimentary [livescript] [1] asset handling for [Play 2.0] [2], implemented as an [sbt] [3]
+Rudimentary [livescript] [1] asset handling for [Play 2.1.x] [2], implemented as an [sbt] [3]
 plugin (very similar to Play's handling of CoffeeScript and LESS), working very similarly to [play-stylus] [4] (from which it is in fact forked).
 
 Prerequisites
@@ -12,7 +12,7 @@ node.js and npm installed, run
 
     npm install -g livescript
 
-to install stylus globally, thereby installing not only the module, but
+to install livescript globally, thereby installing not only the module, but
 also the executable.
 
 Installation

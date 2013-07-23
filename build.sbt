@@ -6,8 +6,6 @@ sbtPlugin := true
 
 version := "0.1"
 
-scalaVersion := "2.9.1"
-
 organization := "com.github.otfoo"
 
 description := "sbt plugin for handling LiveScript assets in Play"
@@ -19,9 +17,9 @@ resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/release
 /// Dependencies
 
 libraryDependencies ++= Seq(
-  "play" %% "play" % "2.0.4",
-  "play" % "sbt-plugin" % "2.0"
 )
+
+addSbtPlugin("play" % "sbt-plugin" % "2.1.1")
 
 /// Publish to local Play; specify this via sbt -Dplay.path=/your/play/path
 publishTo := Some(playRepository)

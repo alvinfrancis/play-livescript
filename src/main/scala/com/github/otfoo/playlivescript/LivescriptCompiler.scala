@@ -17,7 +17,7 @@ object LivescriptCompiler {
       (out, minified, Seq(source))
     } catch {
       case ex: LivescriptException => {
-        throw AssetCompilationException(Some(source), ex.message, ex.line, 0)
+        throw AssetCompilationException(Some(source), ex.message, Some(ex.line), None)
       }
     }
   }

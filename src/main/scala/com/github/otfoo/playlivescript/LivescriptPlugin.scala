@@ -10,10 +10,10 @@ object LivescriptPlugin extends Plugin {
   val lsOptions = SettingKey[Seq[String]]("play-livescript-options")
   val LivescriptWatcher = PlayProject.AssetsCompiler("livescript",
     (_ ** "*.ls"),
-    lsEntryPoints in Compile,
-    { (name, min) => name.replace(".ls", if (min) ".min.css" else ".css") },
+    lsEntryPoints,
+    { (name, min) => name.replace(".ls", ".js") },
     { LivescriptCompiler.compile _ },
-    lsOptions in Compile
+    lsOptions
   )
 
   override val settings = Seq(

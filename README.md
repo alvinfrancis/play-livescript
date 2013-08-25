@@ -12,13 +12,26 @@ node.js and npm installed, run
 
     npm install -g livescript
 
-to install livescript globally, thereby installing not only the module, but
-also the executable.
+to install livescript globally.
 
-Installation
-------------
+How to Use
+----------
 
-Local installation only for now. First, clone the repository:
+A fake Maven repository is now available on github for easier installation. Add the following to your `plugins.sbt`:
+
+```scala
+resolvers += "12foo github/maven" at "https://github.com/12foo/mvnrepo/raw/master/releases/"
+
+addSbtPlugin("com.github.otfoo" % "play-livescript" % "0.1")
+```
+
+NOTE: I'm probably going to maintain this very sloppily (I don't currently use LiveScript in Play, and I'm lazy).
+If something doesn't work, open an issue and I'll get around to it.
+
+Local Build / Installation
+--------------------------
+
+First, clone the repository:
 
     git clone https://github.com/12foo/play-livescript.git
 

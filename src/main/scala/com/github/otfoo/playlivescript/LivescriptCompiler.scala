@@ -8,7 +8,7 @@ import scala.util.control.Exception.catching
 object LivescriptCompiler {
 
   def compile(source: File, options: Seq[String]): (String, Option[String], Seq[File]) = {
-    val command = Seq("livescript", "-c", "-p", source.getAbsolutePath)
+    val command = "livescript" +: "-c" +: "-p" +: options :+ source.getAbsolutePath
 
     try {
       val out = captureOutput(command)

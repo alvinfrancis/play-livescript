@@ -17,23 +17,20 @@ to install livescript globally.
 How to Use
 ----------
 
-A fake Maven repository is now available on github for easier installation. Add the following to your `plugins.sbt`:
+A fake Maven repository forked from the 12foo repository is now available on github for easier installation. Add the following to your `plugins.sbt`:
 
 ```scala
-resolvers += "12foo github/maven" at "https://github.com/12foo/mvnrepo/raw/master/releases/"
+resolvers += Resolver.url("play-livescript repo", url("https://github.com/alvinfrancis/mvnrepo/raw/master/releases/"))(Resolver.ivyStylePatterns)
 
-addSbtPlugin("com.github.otfoo" % "play-livescript" % "0.1")
+addSbtPlugin("com.github.otfoo" % "play-livescript" % "0.1.1")
 ```
-
-NOTE: I'm probably going to maintain this very sloppily (I don't currently use LiveScript in Play, and I'm lazy).
-If something doesn't work, open an issue and I'll get around to it.
 
 Local Build / Installation
 --------------------------
 
 First, clone the repository:
 
-    git clone https://github.com/12foo/play-livescript.git
+    git clone https://github.com/alvinfrancis/play-livescript.git
 
 In the project directory, do:
 
@@ -41,7 +38,7 @@ In the project directory, do:
 
 This will compile the plugin and install it into your Play repository. To use it in your webapp, add the plugin to its `project/plugins.sbt`:
 
-    addSbtPlugin("com.github.otfoo" % "play-livescript" % "0.1")
+    addSbtPlugin("com.github.otfoo" % "play-livescript" % "0.1.1")
 
 
 License
@@ -53,3 +50,4 @@ MIT-style licensing, for details see file LICENSE.
 [2]: http://www.playframework.org/
 [3]: https://github.com/harrah/xsbt
 [4]: https://github.com/patiencelabs/play-stylus
+[5]: https://github.com/12foo/play-livescript

@@ -12,8 +12,7 @@ object LivescriptCompiler {
 
     try {
       val out = captureOutput(command)
-      val minified = catching(classOf[CompilationException])
-        .opt(play.core.jscompile.JavascriptCompiler.minify(out, Some(source.getName)))
+      val minified = None
       (out, minified, Seq(source))
     } catch {
       case ex: LivescriptException => {
